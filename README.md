@@ -1,8 +1,10 @@
 # InstanceCoupling
 
-这是个简单的库，用来专门处理Activity中数据保存的问题。
+这是个简单的库，用来专门处理Activity中数据保存的问题。现已支持Fragment或者其他。
 
-在你需要的地方readInstance,在onSaveInstance中saveInstance
+在你需要的地方readInstance,在onSaveInstance中saveInstance。
+
+每个数据类型我并没有进行验证，如果使用不通过，希望能提出issue。
 
 
 Copyright 2018 zhengyang
