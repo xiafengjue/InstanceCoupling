@@ -1,6 +1,6 @@
 # InstanceCoupling
 
-这是个简单的库，用来专门处理Activity中数据保存的问题。现已支持Fragment或者其他。
+这是个简单的库，用来专门处理Activity中数据保存的问题。暂不支持Fragment或者其他。
 
 在你需要的地方readInstance,在onSaveInstance中saveInstance。
 
