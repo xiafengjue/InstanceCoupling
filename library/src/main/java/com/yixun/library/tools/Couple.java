@@ -1,6 +1,5 @@
 package com.yixun.library.tools;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -19,8 +18,8 @@ import java.util.ArrayList;
 public class Couple {
     private static final String TAG = Couple.class.getSimpleName();
 
-    public static void readInstance(Activity activity, Bundle saveInstance) {
-        Class acls = activity.getClass();
+    public static void readInstance(Object obj, Bundle saveInstance) {
+        Class acls = obj.getClass();
         Field[] fields = acls.getDeclaredFields();
         for (Field field : fields) {
             if (field.isAnnotationPresent(SaveField.class)) {
@@ -87,7 +86,7 @@ public class Couple {
                 }
                 try {
                     field.setAccessible(true);
-                    field.set(activity, object);
+                    field.set(obj, object);
                 } catch (IllegalAccessException e) {
                     Log.d(TAG, "数据读取错误，请检查");
                     e.printStackTrace();
@@ -96,8 +95,8 @@ public class Couple {
         }
     }
 
-    public static void saveInstance(Activity activity, Bundle saveInstance) {
-        Class acls = activity.getClass();
+    public static void saveInstance(Object obj, Bundle saveInstance) {
+        Class acls = obj.getClass();
         Field[] fields = acls.getDeclaredFields();
         for (Field field : fields) {
             if (field.isAnnotationPresent(SaveField.class)) {
@@ -107,7 +106,7 @@ public class Couple {
                 field.setAccessible(true);
                 Object object = null;
                 try {
-                    object = field.get(activity);
+                    object = field.get(acls);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }

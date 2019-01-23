@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/InstanceCoupling.iml" filepath="$PROJECT_DIR$/InstanceCoupling.iml" />
-      <module fileurl="file://$PROJECT_DIR$/simple/app.iml" filepath="$PROJECT_DIR$/simple/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/simple/simple.iml" filepath="$PROJECT_DIR$/simple/simple.iml" />
     </modules>

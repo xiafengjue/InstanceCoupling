@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             savedInstanceState = new Bundle();
-            savedInstanceState.putString("name", "姓名");
+            savedInstanceState.putString("name", "This is test text");
         }
         //读取数据
         Couple.readInstance(this, savedInstanceState);

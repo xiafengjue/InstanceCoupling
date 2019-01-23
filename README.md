@@ -1,12 +1,35 @@
 # InstanceCoupling
 
-这是个简单的库，用来专门处理Activity中数据保存的问题。暂不支持Fragment或者其他。
+这是一个当Activity或者Fragment调用onSaveInstanceState(Bundle outState)方法时，进行数据保存的，并且可以在需要将savedInstanceState的数据进行读取的库。
+详细使用可以看Simple里的代码。
 
-在你需要的地方readInstance,在onSaveInstance中saveInstance。
+build
 
-如果有使用问题，希望能提出issue。
+    compile 'com.sora:InstanceCoupling:1.0.0'
 
-    compile 'com.sora:InstanceCoupling:0.2.0'
+##使用方法
+注解需要保存的字段：
+```Java
+@SaveField//给name属性添加一个注解
+private String name;
+```
+读取
+```Java
+//读取数据
+Couple.readInstance(this, savedInstanceState);
+TextView textView = findViewById(R.id.textview);
+textView.setText(name);
+```
+保存：
+```Java
+@Override
+protected void onSaveInstanceState(Bundle outState) {
+   super.onSaveInstanceState(outState);
+   //保存数据
+   Couple.saveInstance(this, outState);
+}
+```
+
 
 Copyright 2018 zhengyang
 
@@ -21,3 +44,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
