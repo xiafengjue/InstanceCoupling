@@ -20,6 +20,7 @@ public class Couple {
 
     public static void readInstance(Object obj, Bundle saveInstance) {
         Class acls = obj.getClass();
+        Log.d("acls", acls.getName());
         Field[] fields = acls.getDeclaredFields();
         for (Field field : fields) {
             if (field.isAnnotationPresent(SaveField.class)) {
@@ -97,6 +98,7 @@ public class Couple {
 
     public static void saveInstance(Object obj, Bundle saveInstance) {
         Class acls = obj.getClass();
+
         Field[] fields = acls.getDeclaredFields();
         for (Field field : fields) {
             if (field.isAnnotationPresent(SaveField.class)) {
@@ -106,7 +108,7 @@ public class Couple {
                 field.setAccessible(true);
                 Object object = null;
                 try {
-                    object = field.get(acls);
+                    object = field.get(obj);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }

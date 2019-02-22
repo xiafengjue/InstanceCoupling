@@ -14,7 +14,7 @@ import com.yixun.library.tools.Couple;
 
 public class MainActivity extends AppCompatActivity {
     @SaveField//给name属性添加一个注解
-    private String name;
+    public String name;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -5,7 +5,7 @@
 
 build
 
-    compile 'com.sora:InstanceCoupling:1.0.0'
+    compile 'com.sora:InstanceCoupling:1.0.1'
 
 ##使用方法
 注解需要保存的字段：
